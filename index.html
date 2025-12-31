@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | GIOVANNI HACK-G7 - Informaticien</title>
+    <link rel="shortcut icon" href="./design-1762183496055.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -228,18 +229,23 @@
             margin-top: 2rem;
         }
 
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%;
-            height: 80%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            opacity: 0.8;
-            animation: morph 8s ease-in-out infinite;
-        }
+     .hero-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 80%;
+    background: 
+        linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%),
+        url('./IMG-20241112-WA0007.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    opacity: 0.8;
+    animation: morph 8s ease-in-out infinite;
+}
+
 
         @keyframes morph {
             0% {
@@ -909,7 +915,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Bonjour, je suis <span>GIOVANNI HACK-G7</span></h1>
+                <h1 class="fade-in">Bonjour, je suis <span>GIOVANNI KAMDEM</span></h1>
                 <h2 class="fade-in delay-1">Informaticien & Développeur Full-Stack</h2>
                 <p class="fade-in delay-2">Je crée des solutions innovantes et performantes en combinant expertise technique et créativité. Passionné par les nouvelles technologies et le développement de logiciels.</p>
                 <div class="hero-btns fade-in delay-3">
@@ -919,6 +925,7 @@
             </div>
         </div>
         <div class="hero-image">
+            <img src="./IMG-20241112-WA0007.jpg" class="hero-image">
         </div>
     </section>
 
@@ -946,7 +953,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image fade-in delay-2"></div>
+                <div class="about-image fade-in delay-2">
+                    <img src="./IMG-20241112-WA0007.jpg" class="hero-image">
+
+                </div>
             </div>
         </div>
     </section>
@@ -1136,10 +1146,10 @@
                     <div class="skill-item fade-in delay-3">
                         <div class="skill-header">
                             <span class="skill-name">Administration Réseau/Système</span>
-                            <span class="skill-percentage">10%</span>
+                            <span class="skill-percentage">30%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="10"></div>
+                            <div class="skill-progress" data-width="30"></div>
                         </div>
                     </div>
                 </div>
@@ -1249,14 +1259,7 @@
                     <p class="experience-desc">Conception d'interfaces utilisateur, création de maquettes et design graphique pour divers projets web et print.</p>
                 </div>
                 
-                <div class="experience-item fade-in delay-3">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Formateur en Informatique</h3>
-                        <span class="experience-date">XXXX</span>
-                    </div>
-                    <div class="experience-company">SALAR SARL</div>
-                    <p class="experience-desc">xxx</p>
-                </div>
+               
             </div>
         </div>
     </section>
@@ -1539,21 +1542,23 @@
                     </div>
                 </div>
                 <div class="contact-form fade-in delay-2">
-                    <form id="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Sujet" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Votre message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Envoyer le message</button>
-                    </form>
+   <form id="contact-form">
+  <div class="form-group">
+    <input type="text" name="from_name" class="form-control" placeholder="Votre nom" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="from_email" class="form-control" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <input type="text" name="sujet" class="form-control" placeholder="Sujet" required>
+  </div>
+  <div class="form-group">
+    <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
+  </div>
+  <button type="submit" class="btn">Envoyer le message</button>
+  <p id="form-status" style="margin-top:10px;"></p>
+</form>
+
                 </div>
             </div>
         </div>
@@ -1576,150 +1581,189 @@
                 </ul>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 GIOVANNI HACK-G7. Tous droits réservés.</p>
+                <p>&copy; 2025 GIOVANNI KAMDEM. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
-        });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+ <script>
+/* ===============================
+   MENU TOGGLE
+================================ */
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+});
+
+/* ===============================
+   HEADER SCROLL EFFECT
+================================ */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+/* ===============================
+   SMOOTH SCROLLING
+================================ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        }
+    });
+});
+
+/* ===============================
+   SKILLS ANIMATION
+================================ */
+const skillBars = document.querySelectorAll('.skill-progress');
+const languageBars = document.querySelectorAll('.language-progress');
+
+function animateSkills() {
+    skillBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width + '%';
+    });
+    languageBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width + '%';
+    });
+}
+
+/* ===============================
+   PROJECTS FILTER
+================================ */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
             } else {
-                header.classList.remove('scrolled');
+                card.style.display = 'none';
             }
         });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        menuToggle.querySelector('i').classList.add('fa-bars');
-                        menuToggle.querySelector('i').classList.remove('fa-times');
-                    }
-                }
-            });
-        });
-        
-        // Skills Animation
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const languageBars = document.querySelectorAll('.language-progress');
-        
-        function animateSkills() {
-            skillBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width + '%';
-            });
-            
-            languageBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width + '%';
-            });
+    });
+});
+
+/* ===============================
+   FORM SUBMISSION ALERT
+================================ */
+// Si tu veux juste un alert simple pour n’importe quel autre formulaire
+const form = document.getElementById('form');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Merci pour votre message! Je vous répondrai dans les plus brefs délais.');
+        form.reset();
+    });
+}
+
+/* ===============================
+   SCROLL FADE-IN
+================================ */
+const fadeElements = document.querySelectorAll('.fade-in');
+
+function checkScroll() {
+    fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
         }
-        
-        // Projects Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Form Submission
-        const form = document.getElementById('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci pour votre message! Je vous répondrai dans les plus brefs délais.');
-            form.reset();
-        });
-        
-        // Scroll Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        function checkScroll() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-        
-        // Initialize animations when page loads
-        window.addEventListener('load', () => {
+    });
+}
+
+/* ===============================
+   INTERSECTION OBSERVER POUR SKILLS
+================================ */
+const observerOptions = { threshold: 0.5 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
             animateSkills();
-            checkScroll();
-        });
-        
-        // Animate elements on scroll
-        window.addEventListener('scroll', checkScroll);
-        
-        // Animate skills when they come into view
-        const observerOptions = {
-            threshold: 0.5
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkills();
-                }
+        }
+    });
+}, observerOptions);
+
+const skillsSection = document.querySelector('.skills');
+const languagesSection = document.querySelector('.languages');
+
+if (skillsSection) observer.observe(skillsSection);
+if (languagesSection) observer.observe(languagesSection);
+
+/* ===============================
+   INITIALISATION AU LOAD
+================================ */
+window.addEventListener('load', () => {
+    animateSkills();
+    checkScroll();
+});
+
+window.addEventListener('scroll', checkScroll);
+
+/* ===============================
+   EMAILJS FORM SUBMISSION
+================================ */
+emailjs.init("8Ndaj1LfL0VzIPjiA"); // Remplace par ton User ID EmailJS
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event){
+        event.preventDefault();
+
+        const status = document.getElementById('form-status');
+        status.textContent = "Envoi en cours...";
+        status.style.color = "black";
+
+        emailjs.sendForm('service_svrycie', 'template_1dltnh7', this)
+            .then(function() {
+                status.textContent = "Message envoyé avec succès !";
+                status.style.color = "green";
+                contactForm.reset();
+            }, function(error) {
+                status.textContent = "Erreur lors de l'envoi. Vérifie les IDs et reconnecte ton Gmail.";
+                status.style.color = "red";
+                console.error("EmailJS error:", error);
             });
-        }, observerOptions);
-        
-        const skillsSection = document.querySelector('.skills');
-        const languagesSection = document.querySelector('.languages');
-        
-        if (skillsSection) {
-            observer.observe(skillsSection);
-        }
-        
-        if (languagesSection) {
-            observer.observe(languagesSection);
-        }
-    </script>
+    });
+}
+</script>
 </body>
 </html>
